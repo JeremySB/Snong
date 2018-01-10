@@ -14,12 +14,23 @@ public class SnakeMovement : MonoBehaviour {
     public float speed = 1f;
 
     int targetNumberOfLinks;
-    Vector3 direction = Vector3.up;
     float updateTimer = 0;
     List<GameObject> links = new List<GameObject>();
+    Vector3? lastUsedDirection;
 
-	// Use this for initialization
-	void Start () {
+    Vector3 _direction = Vector3.up;
+    public Vector3 Direction {
+        get { return _direction; }
+        set {
+            if (!lastUsedDirection.HasValue || !Mathf.Approximately(Mathf.Abs(Vector3.Angle(lastUsedDirection.Value, value)), 180))
+            {
+                _direction = value;
+            }
+        }
+    }
+
+    // Use this for initialization
+    void Start () {
         targetNumberOfLinks = initialNumberOfLinks;
 	}
 
@@ -32,7 +43,7 @@ public class SnakeMovement : MonoBehaviour {
             if(targetNumberOfLinks > links.Count)
             {
                 Transform spawn = links.LastOrDefault()?.transform ?? transform;
-                GameObject newLink = (GameObject)Instantiate(linkPrefab, spawn.position, spawn.rotation, transform);
+                GameObject newLink = Instantiate(linkPrefab, spawn.position, spawn.rotation, transform);
                 links.Add(newLink);
 
                 if (links.Count == 1) firstLinkSpawned.Invoke(newLink);
@@ -46,7 +57,8 @@ public class SnakeMovement : MonoBehaviour {
             }
 
             var first = links.First().transform;
-            first.Translate(direction * speed);
+            first.Translate(Direction * speed);
+            lastUsedDirection = Direction;
         }
 	}
 }

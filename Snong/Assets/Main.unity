@@ -287,7 +287,7 @@ GameObject:
   - component: {fileID: 426294782}
   m_Layer: 0
   m_Name: Left
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -360,6 +360,53 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 426294780}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &983350236
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114904148057707162, guid: eac6117dc86865342b0374296774d3cb,
+        type: 2}
+      propertyPath: firstLinkSpawned.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 228268837}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: eac6117dc86865342b0374296774d3cb, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1218983524
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +420,7 @@ GameObject:
   - component: {fileID: 1218983526}
   m_Layer: 0
   m_Name: Top
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -478,71 +525,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1627174085
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1627174089}
-  - component: {fileID: 1627174090}
-  m_Layer: 0
-  m_Name: Snake
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1627174089
+--- !u!4 &1627174089 stripped
 Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1627174085}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1627174090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1627174085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2387886772df83d4e854b45bd6f88797, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstLinkSpawned:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 228268837}
-        m_MethodName: SetTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-    m_TypeName: UnityEvents.GameObjectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  linkSpawned:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEvents.GameObjectEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
-  linkPrefab: {fileID: 1958354480724910, guid: 90b7bbdb688eb274489fa4d97604665e, type: 2}
-  initialNumberOfLinks: 4
-  updateFrequency: 0.3
-  speed: 1
+  m_PrefabParentObject: {fileID: 4267637520821366, guid: eac6117dc86865342b0374296774d3cb,
+    type: 2}
+  m_PrefabInternal: {fileID: 983350236}
 --- !u!1 &1638988831
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +543,7 @@ GameObject:
   - component: {fileID: 1638988833}
   m_Layer: 0
   m_Name: Right
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -728,7 +715,7 @@ GameObject:
   - component: {fileID: 2103568150}
   m_Layer: 0
   m_Name: Bottom
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
