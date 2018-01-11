@@ -11,7 +11,7 @@ public class SnakeMovement : MonoBehaviour {
     public GameObject linkPrefab;
     public int initialNumberOfLinks = 4;
     public float updateFrequency = 0.5f;
-    public float speed = 1f;
+    public float linkDistance = 1f;
 
     int targetNumberOfLinks;
     float updateTimer = 0;
@@ -57,7 +57,7 @@ public class SnakeMovement : MonoBehaviour {
             }
 
             var first = links.First().transform;
-            first.Translate(Direction * speed);
+            first.Translate(Direction * linkDistance);
             lastUsedDirection = Direction;
         }
 	}
